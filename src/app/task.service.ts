@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Task } from './task';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  }
 
   getTasks(): Observable<Task[]> {
-    let tasks = [
-      { id: 1, workflowId: 'workflow-1', status: 'new', entityId: 'entityId-1', userId: 'user-1', url: 'http://www.google.com/', date: '2019-03-19', type: 'Entity approval' },
-      { id: 2, workflowId: 'workflow-2', status: 'new', entityId: 'entityId-2', userId: 'user-2', url: 'http://www.google.com/', date: '2019-03-19', type: 'Entity approval' }
-    ];
-    return of(tasks);
+    return this.http.get<Task[]>('/api/tasks');
   }
 }
