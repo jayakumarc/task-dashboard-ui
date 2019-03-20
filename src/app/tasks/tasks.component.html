@@ -3,4 +3,5 @@
   <li *ngFor="let task of tasks" (click)="openUrl(task)">
     <span class=" badge">{{ task.id }}</span><span>{{ task.entityId }} </span>
   </li>
+  <div *ngIf="incompleteTasks.length == 0">No tasks to display</div>
 </ul>
