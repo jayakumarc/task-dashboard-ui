@@ -9,6 +9,7 @@ import { TaskService } from '../task.service'
 })
 export class TasksComponent implements OnInit {
   tasks: Task[]
+  incompleteTasks: Task[]
 
   constructor(private taskService: TaskService) { }
 
@@ -17,7 +18,10 @@ export class TasksComponent implements OnInit {
   }
 
   getTasks(): void {
-    this.taskService.getTasks().subscribe(tasks => this.tasks = tasks);
+    this.taskService.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+      this.incompleteTasks = tasks.filter(t => t.status !== 'completed');
+    });
   }
 
   openUrl(task: Task): void {

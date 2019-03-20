@@ -1,7 +1,18 @@
 <h2>Tasks</h2>
 <ul class="tasks">
-  <li *ngFor="let task of tasks" (click)="openUrl(task)">
-    <span class=" badge">{{ task.id }}</span><span>{{ task.entityId }} </span>
+  <li>
+    <span class="badge">Id</span>
+    <span class="cell">Entity</span>
+    <span class="cell">User</span>
+    <span class="cell">Type</span>
+    <span class="cell">Status</span>
+  </li>
+  <li *ngFor="let task of incompleteTasks" (click)="openUrl(task)">
+    <span class="badge">{{ task.id }}</span>
+    <span class="cell">{{ task.entityId }} </span>
+    <span class="cell">{{ task.userId }} </span>
+    <span class="cell">{{ task.type }} </span>
+    <span class="cell">{{ task.status }} </span>
   </li>
   <div *ngIf="incompleteTasks.length == 0">No tasks to display</div>
 </ul>
