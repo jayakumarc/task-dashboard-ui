@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { EntityDetailComponent } from './entity-detail/entity-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    EntityDetailComponent
   ],
   imports: [
     BrowserModule,

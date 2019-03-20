@@ -1,0 +1,25 @@
+.button {
+  background-color: #C0C0C0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 5px;
+  position: relative;
+  transition: all ease 0.4s;
+  cursor: pointer;
+}
+.button:active {
+  box-shadow: 0 3px 0 #00823F;
+  top: 3px;
+}
+.approve {
+    background-color: #4CAF50;
+}
+.reject {
+    background-color: #f44336;
+}
