@@ -3,5 +3,5 @@
   <li *ngFor="let notification of notifications">
     <span class=" badge">{{ notification.id }}</span><span>{{ notification.message }} </span>
   </li>
-  <div *ngIf="notifications.length == 0">No notifications to display</div>
+  <div *ngIf="notifications?.length == 0">No notifications to display</div>
 </ul>

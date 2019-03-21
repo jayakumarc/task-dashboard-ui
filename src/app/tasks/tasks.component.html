@@ -14,5 +14,5 @@
     <span class="cell">{{ task.type }} </span>
     <span class="cell">{{ task.status }} </span>
   </li>
-  <div *ngIf="incompleteTasks.length == 0">No tasks to display</div>
+  <div *ngIf="incompleteTasks?.length == 0">No tasks to display</div>
 </ul>
